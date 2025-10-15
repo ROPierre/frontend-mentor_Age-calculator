@@ -1,0 +1,131 @@
+@use "../base/variables";
+@use "../utils/mixins";
+@use "../utils/functions";
+
+.form {
+    & > div {
+        margin-bottom: functions.spacing(4);
+
+        @include mixins.respond-to(large) {
+            margin-bottom: variables.$spacing-0;
+        }
+    }
+
+    &-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: functions.spacing(4);
+
+        @include mixins.respond-to(small) {
+            display: flex;
+            justify-content: start;
+            gap: 16px;
+        }
+
+        .form-label {
+            display: block;
+            padding-bottom: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: bold;
+            line-height: 150%;
+            letter-spacing: 5px;
+            color: variables.$label-color;
+
+            @include mixins.respond-to(small) {
+                font-size: 0.75rem;
+            }
+        }
+
+        .form-input {
+            width: 100%;
+            max-width: 10rem;
+            padding: variables.$spacing-base functions.spacing(2);
+            border: 1px solid variables.$border-color;
+            border-radius: variables.$spacing-base;
+            font-size: 2rem;
+            font-weight: bold;
+            color: variables.$text-color;
+            line-height: 150%;
+
+            @include mixins.respond-to(small) {
+                font-size: 1.25rem;
+            }
+        }
+
+        // Validation
+        .form-input-container.invalid {
+            .form-label {
+                color: variables.$invalid-color;
+            }
+
+            .form-input {
+                border-color: variables.$invalid-color;
+            }
+        }
+
+        .invalid-message {
+            display: none;
+            margin-top: variables.$spacing-base;
+            font-size: 0.875rem;
+            line-height: 150%;
+            font-style: italic;
+            color: variables.$invalid-color;
+
+            @include mixins.respond-to(small) {
+                font-size: 0.75rem;
+            }
+
+            &.show {
+                display: block;
+            }
+        }
+    }
+
+    &-button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+
+        @include mixins.respond-to(large) {
+            justify-content: end;
+        }
+
+        img {
+            @include mixins.respond-to(small) {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: variables.$border-color;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+
+        .form-button {
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            background-color: variables.$primary-color;
+            border: none;
+            position: relative;
+            transition: all 0.3s;
+
+            &:hover {
+                background-color: variables.$text-color;
+            }
+
+            @include mixins.respond-to(small) {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+    }
+}

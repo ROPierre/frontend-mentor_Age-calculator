@@ -1,0 +1,15 @@
+@use "./base/reset";
+@use "./base/variables";
+@use "./components/cards";
+@use "./components/forms";
+@use "./components/results";
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: fixed;
+    bottom: 1rem;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

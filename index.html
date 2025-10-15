@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="./src/styles/main.css" />
+
+        <script type="module" src="./src/scripts/main.js" defer></script>
+
+        <title>Frontend Mentor | Age calculator app</title>
+    </head>
+    <body>
+        <main class="card">
+            <form class="form" id="ageCalculator">
+                <div class="form-container">
+                    <div class="form-input-container">
+                        <label for="ageCalculatorDay" class="form-label">
+                            Day
+                        </label>
+                        <input
+                            type="text"
+                            class="form-input"
+                            id="ageCalculatorDay"
+                            value=""
+                            placeholder="DD"
+                            inputmode="numeric"
+                            required
+                        />
+                        <p class="invalid-message">Example of invalid text</p>
+                    </div>
+                    <div class="form-input-container">
+                        <label for="ageCalculatorMonth" class="form-label">
+                            Month
+                        </label>
+                        <input
+                            type="text"
+                            class="form-input"
+                            id="ageCalculatorMonth"
+                            value=""
+                            placeholder="MM"
+                            inputmode="numeric"
+                            required
+                        />
+                        <p class="invalid-message invalid">
+                            Example of invalid text
+                        </p>
+                    </div>
+                    <div class="form-input-container">
+                        <label for="ageCalculatorYear" class="form-label">
+                            Year
+                        </label>
+                        <input
+                            type="text"
+                            class="form-input"
+                            id="ageCalculatorYear"
+                            value=""
+                            placeholder="YYYY"
+                            inputmode="numeric"
+                            required
+                        />
+                        <p class="invalid-message invalid"></p>
+                    </div>
+                </div>
+
+                <div class="form-button-container">
+                    <button
+                        class="form-button"
+                        id="ageCalculatorButton"
+                        type="button"
+                        aria-describedby="Button to Calculate Age"
+                    >
+                        <img
+                            class="form-button-icon"
+                            src="./src/assets/images/icon-arrow.svg"
+                            alt="Button to Calculate Age"
+                        />
+                    </button>
+                </div>
+            </form>
+
+            <section class="result">
+                <p id="resultYears">
+                    <span class="result-number">--</span> years
+                </p>
+                <p id="resultMonths">
+                    <span class="result-number">--</span> months
+                </p>
+                <p id="resultDays">
+                    <span class="result-number">--</span> days
+                </p>
+            </section>
+        </main>
+        <div class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by <a href="https://github.com/ROPierre">Rafael Pierre</a>.
+        </div>
+    </body>
+</html>

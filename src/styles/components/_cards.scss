@@ -1,0 +1,18 @@
+@use "../base/variables";
+@use "../utils/mixins";
+@use "../utils/functions";
+
+.card {
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 1.5rem 1.5rem 12.5rem 1.5rem;
+    padding: functions.spacing(7);
+
+    @include mixins.respond-to(small) {
+        padding: functions.spacing(4);
+		border-radius: 1.5rem 1.5rem 6.25rem 1.5rem;
+
+		margin-inline: 1rem;
+    }
+}

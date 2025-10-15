@@ -1,0 +1,5 @@
+@use "../base/variables";
+
+@function spacing($index) {
+    @return variables.$spacing-base * $index;
+}
